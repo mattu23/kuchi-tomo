@@ -17,4 +17,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function users()
+    {
+        return $this->hasMany(Shop::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

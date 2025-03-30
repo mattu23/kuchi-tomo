@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     zip \
-    && docker-php-ext-install pdo_mysql
+    libicu-dev \
+    && docker-php-ext-install intl pdo_mysql
 
 # Composer をインストール
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
